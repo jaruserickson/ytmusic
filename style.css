@@ -83,6 +83,7 @@ input[type=text], select {
 
 a:hover{
     opacity:0.7;
+    cursor: pointer;
 }
 a{
     transition:0.3s;

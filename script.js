@@ -48,15 +48,17 @@ function submit() {
                     $("#profile").css("background-repeat", "no-repeat");
                     $("#profile").css("background-position", "center");
                     $("#profile").css("background-size", "auto 100%");
-                    $("#profile").append('<a onclick="play()"><img id="play" src="img/ic_play_circle_filled_black_48dp.png"/></a>');
+                    $("#profile").append('<a onclick="playAll()"><img id="play" src="img/ic_play_circle_filled_black_48dp.png"/></a>');
                     $("#profile").append('<h3 id="subtext">play all</h3>');
                 })
             }
     );
 }
-function play(){
 
+function playAll() {
+    console.log("playing");
 }
+
 function getVids(upID) {
     $.get(
         "https://www.googleapis.com/youtube/v3/playlistItems",{
