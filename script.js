@@ -28,7 +28,7 @@ function submit() {
                     profilePicURL = item.snippet.thumbnails.high.url;
                     profileName = item.snippet.title;
 
-                    $("#profile").append('<img id="avatar" src="' + profilePicURL + '"/>');
+                    $("#profile").append('<a href="https://youtube.com/' + channelName + '"><img id="avatar" src="' + profilePicURL + '"/></a>');
                     $("#profile").append('<h1 id="title">' + profileName + '</h1>');
                 })
             }
@@ -48,11 +48,15 @@ function submit() {
                     $("#profile").css("background-repeat", "no-repeat");
                     $("#profile").css("background-position", "center");
                     $("#profile").css("background-size", "auto 100%");
+                    $("#profile").append('<a onclick="play()"><img id="play" src="img/ic_play_circle_filled_black_48dp.png"/></a>');
+                    $("#profile").append('<h3 id="subtext">play all</h3>');
                 })
             }
     );
 }
+function play(){
 
+}
 function getVids(upID) {
     $.get(
         "https://www.googleapis.com/youtube/v3/playlistItems",{

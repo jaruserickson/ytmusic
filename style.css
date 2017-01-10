@@ -69,11 +69,26 @@ input[type=text], select {
 }
 
 #title{
-    margin-top:70px;
+    margin-top:97px;
     margin-left:45px;
     font-size:40px;
 }
 
-#desc{
-    
+#play{
+    width:40px;
+    height:auto;
+    margin-top:155px;
+    margin-left:-255px;
+}
+
+a:hover{
+    opacity:0.7;
+}
+a{
+    transition:0.3s;
+}
+#subtext{
+    margin-top:162px;
+    margin-left:-205px;
+    font-size:25px;
 }
