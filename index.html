@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ytmusic</title>
+        <link rel='shortcut icon' href='favicon.png' type='image/png'/ >
+    	<link href="style.css" type="text/css" rel="stylesheet"/ >
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="animate.css"/ >
+
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <!--there's no responsiveness ATM-->
+    </head>
+
+    <body>
+        <div id="main">
+            <h1 style="font-size: 65px">ytmusic</h1>
+            <form onkeypress="return keyData(event)" name="nameform" id="nameform">
+        		<center style="margin-bottom: 4px">youtube id</center><input type="text" id="channel">
+        	</form>
+            <center id="error"></center>
+        </div>
+
+        <!--Data From YouTube API-->
+        <div id="profile"></div>
+
+        <div id="player">
+            <ul id="results"></ul>
+            <!--not visible to begin-->
+        </div>
+    </body>
+</html>

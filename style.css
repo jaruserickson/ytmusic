@@ -1,0 +1,63 @@
+html{
+    height: 100%;
+}
+
+body{
+	overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+	justify-content: center;
+
+	height: 100%;
+	margin: 0;
+	padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+input[type=text], select {
+	padding: 8px 10px;
+	margin: 8px 0;
+	border:1px solid #ccc;
+	border-radius: 1px;
+	box-sizing:border-box;
+}
+
+#main{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+	justify-content: center;
+    width: 700px;
+    height: 300px;
+    background-color:rgba(0,0,0,0.09);
+    z-index: 900;
+}
+
+#player{
+    display: none;
+    width: 700px;
+    height: 350px;
+    background-color: blue;
+    z-index: 800;
+}
+
+#profile{
+    width:700px;
+    height: 300px;
+    background-color:red;
+    z-index:900;
+}
+
+#avatar{
+    margin-top:45px;
+    margin-left:45px;
+    width:210px;
+    height:210px;
+}
