@@ -1,7 +1,9 @@
 # ytmusic
-'ytmusic' is a web application that glorifies the music listening experience YouTube offers.
+![logo](https://github.com/jaruserickson/ytmusic/blob/master/img/banner.png?raw=true "logo!")
 
-Type the channel ID you'd like to listen to into the main frame, and enjoy!
+'ytmusic' is a web application that compliments the sublime music listening experience YouTube offers!
+
+Type the channel ID you'd like to listen to into the main frame, and enjoy.
 
 ---
 
