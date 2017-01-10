@@ -11,4 +11,4 @@ Type the channel ID you'd like to listen to into the main frame, and enjoy!
 - animate.css
 
 
-*created with :purple_heart: during one of my tuesday hack sessions.*
+*created with :purple_heart: on a tuesday in january '16*
