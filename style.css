@@ -18,6 +18,17 @@ body{
     font-family: 'Josefin Sans', sans-serif;
 }
 
+#load {
+	position:fixed;
+	left:0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1050;
+	opacity: 1.0;
+	background: url(img/banner.png) 50% 50% no-repeat #fff;
+}
+
 input[type=text], select {
 	padding: 8px 10px;
 	margin: 8px 0;
@@ -41,10 +52,8 @@ input[type=text], select {
 }
 
 #player{
-
     width: 700px;
-    height: 350px;
-    background-color: #444;
+    height: 100px;
     z-index: 800;
 }
 
@@ -81,6 +90,14 @@ input[type=text], select {
     margin-left:-255px;
 }
 
+#footer{
+    height:50px;
+    width:700px;
+    position:fixed;
+    background-color:#444;
+    z-index:1000;
+}
+
 a:hover{
     opacity:0.7;
     cursor: pointer;
@@ -96,15 +113,12 @@ a{
 
 /* thanks to jsfiddle/MadLittleMods! */
 .new-item {
-  /* 0 does not work so we have to use a small number */
-  /* Start out small */
   flex: .00001;
-
-  background: rgba(0, 0, 0, .4);
 
   -webkit-animation: flexGrow 500ms ease forwards;
   -o-animation: flexGrow 500ms ease forwards;
   animation: flexGrow 500ms ease forwards;
+  transition: all 500ms linear;
 }
 
 @-webkit-keyframes flexGrow {

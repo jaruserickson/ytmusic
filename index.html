@@ -9,10 +9,13 @@
 
     	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
         <script src="script.js"></script>
+        <script src="ytscript.js"></script>
+        <script src="loadscreen.js"></script>
         <!--there's no responsiveness ATM-->
     </head>
 
     <body>
+        <div id="load" class="animated pulse"></div>
         <div id="main">
             <h1 style="font-size: 65px">ytmusic</h1>
             <form onkeypress="return keyData(event)" name="nameform" id="nameform">
@@ -25,12 +28,16 @@
         <div id="profile"></div>
 
         <div id="player">
-            <ul id="results"></ul>
-        </div>
-    </body>
+            <div id="footer"></div>
+            <div id="youtube-audio"></div>
 
-    <script>
-        $("#profile").hide();
-        $("#player").hide();
-    </script>
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script type="text/javascript" id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflGEorTa/www-widgetapi.js" async=""></script>
+        <script>
+            $("#profile").hide();
+            $("#player").hide();
+        </script>
+    </body>
 </html>
