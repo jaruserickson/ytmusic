@@ -41,10 +41,10 @@ input[type=text], select {
 }
 
 #player{
-    display: none;
+
     width: 700px;
     height: 350px;
-    background-color: blue;
+    background-color: #444;
     z-index: 800;
 }
 
@@ -92,4 +92,33 @@ a{
     margin-top:162px;
     margin-left:-205px;
     font-size:25px;
+}
+
+/* thanks to jsfiddle/MadLittleMods! */
+.new-item {
+  /* 0 does not work so we have to use a small number */
+  /* Start out small */
+  flex: .00001;
+
+  background: rgba(0, 0, 0, .4);
+
+  -webkit-animation: flexGrow 500ms ease forwards;
+  -o-animation: flexGrow 500ms ease forwards;
+  animation: flexGrow 500ms ease forwards;
+}
+
+@-webkit-keyframes flexGrow {
+  to {
+    flex: 1;
+  }
+}
+@-o-keyframes flexGrow {
+  to {
+    flex: 1;
+  }
+}
+@keyframes flexGrow {
+  to {
+    flex: 1;
+  }
 }

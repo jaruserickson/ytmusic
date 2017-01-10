@@ -1,3 +1,6 @@
+//global variables
+var channelName;
+
 function keyData(x){
     if (x && x.keyCode === 13){
         if (document.getElementById("channel").value != ""){
@@ -14,7 +17,7 @@ function submit() {
     $("#profile").fadeIn();
     $("#profile").addClass("animated fadeInUp");
 
-    var channelName = document.getElementById("channel").value;
+    channelName = document.getElementById("channel").value;
 
     //get profile data
     $.get(
@@ -33,6 +36,7 @@ function submit() {
                 })
             }
     );
+    //creates background and play button
     $.get(
         "https://www.googleapis.com/youtube/v3/channels",{
             part: 'brandingSettings',
@@ -57,13 +61,35 @@ function submit() {
 
 function playAll() {
     console.log("playing");
+    //gets uploads playlist and creates player
+    $.get(
+        "https://www.googleapis.com/youtube/v3/channels",{
+            part: 'contentDetails',
+            forUsername: channelName,
+            key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
+            //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
+            function(data){
+                $.each(data.items, function(i, item){
+                    console.log(item);
+                    uploadsID = item.contentDetails.relatedPlaylists.uploads;
+                    getVids(uploadsID);
+                    $("#player").addClass("new-item");
+                    $("#player").fadeIn();
+                })
+            }
+    );
 }
 
+//get uploads playlistItems
+//add the div which has video thumbnails as album titles
+//add the fixed div at the bottom for audio player
+
 function getVids(upID) {
+    //gets video data by bounds of the API call
     $.get(
         "https://www.googleapis.com/youtube/v3/playlistItems",{
             part: 'snippet',
-            maxResults: 10,
+            maxResults: 10, //should make a further api call when needed.
             playlistId: upID,
             key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
             //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
@@ -72,6 +98,9 @@ function getVids(upID) {
                 $.each(data.items, function(i, item) {
                     console.log(item);
                     vidTitle = item.snippet.title;
+                    vidThumbnailURL = item.snippet.thumbnails.maxres.url;
+                    vidId = item.snippet.resourceId.videoId;
+                    console.log(vidThumbnailURL);
 
                     output = '<li>' + vidTitle + '</li>';
 
