@@ -49,9 +49,15 @@ input[type=text], select {
 }
 
 #profile{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    flex-wrap: wrap;
     width:700px;
     height: 300px;
-    background-color:red;
     z-index:900;
 }
 
@@ -60,4 +66,14 @@ input[type=text], select {
     margin-left:45px;
     width:210px;
     height:210px;
+}
+
+#title{
+    margin-top:70px;
+    margin-left:45px;
+    font-size:40px;
+}
+
+#desc{
+    
 }

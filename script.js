@@ -1,5 +1,3 @@
-$("#profile").hide();
-
 function keyData(x){
     if (x && x.keyCode === 13){
         if (document.getElementById("channel").value != ""){
@@ -27,35 +25,32 @@ function submit() {
             //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
             function(data){
                 $.each(data.items, function(i, item) {
-                    console.log(item);
                     profilePicURL = item.snippet.thumbnails.high.url;
                     profileName = item.snippet.title;
-                    profileDesc = item.snippet.description;
-                    console.log(profilePicURL);
 
-                    $("#profile").append('<img id="avatar" src="' + profilePicURL + '"/>')
+                    $("#profile").append('<img id="avatar" src="' + profilePicURL + '"/>');
+                    $("#profile").append('<h1 id="title">' + profileName + '</h1>');
                 })
             }
     );
     $.get(
         "https://www.googleapis.com/youtube/v3/channels",{
-            part: 'snippet',
+            part: 'brandingSettings',
             forUsername: channelName,
             key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
             //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
             function(data){
                 $.each(data.items, function(i, item) {
-                    console.log(item);
-                    profilePicURL = item.snippet.thumbnails.high.url;
-                    profileName = item.snippet.title;
-                    profileDesc = item.snippet.description;
-                    console.log(profilePicURL);
+                    profileBannerURL = item.brandingSettings.image.bannerImageUrl;
 
-                    $("#profile").append('<img id="avatar" src="' + profilePicURL + '"/>')
+                    //css for background image has to be done here?
+                    $("#profile").css("background", "linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)), url(" + profileBannerURL + ")");
+                    $("#profile").css("background-repeat", "no-repeat");
+                    $("#profile").css("background-position", "center");
+                    $("#profile").css("background-size", "auto 100%");
                 })
             }
     );
-    //document.getElementById("return").innerHTML = x;
 }
 
 function getVids(upID) {
