@@ -63,8 +63,9 @@ input[type=text], select {
     display: -ms-flexbox;
     display: flex;
     flex-direction: row;
-    align-content: flex-end;
+    align-content: flex-start;
     flex-wrap: wrap;
+    flex-flow: column wrap;
     width:700px;
     height: 300px;
     z-index:900;
@@ -86,8 +87,7 @@ input[type=text], select {
 #play{
     width:40px;
     height:auto;
-    margin-top:155px;
-    margin-left:-255px;
+    margin-left:35px;
 }
 
 #footer{
@@ -105,9 +105,10 @@ a:hover{
 a{
     transition:0.3s;
 }
+
 #subtext{
-    margin-top:162px;
-    margin-left:-205px;
+    margin-top:-38px;
+    margin-left:83px;
     font-size:25px;
 }
 
