@@ -11,6 +11,6 @@ Type the channel ID you'd like to listen to into the main frame, and enjoy.
 - YouTube Data API v3
 - jquery
 - animate.css
-
+- Google material design icons
 
 *created with :purple_heart: on a tuesday in january '16*
