@@ -90,6 +90,44 @@ input[type=text], select {
     margin-left:35px;
 }
 
+#youtube-icon{
+    width:40px;
+    height:auto;
+    margin-top:-26px;
+    margin-left:-234px;
+    z-index:2000;
+    position:fixed;
+}
+
+#skipf{
+    position:fixed;
+    z-index:1000;
+    width:40px;
+    height:auto;
+    margin-top:-26px;
+    margin-left:72px;
+    cursor:pointer;
+}
+
+#skipb{
+    position:fixed;
+    z-index:1000;
+    width:40px;
+    height:auto;
+    margin-top:-26px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+#progress-bar{
+    position:fixed;
+    z-index:1000;
+    margin-top:-14px;
+    margin-left:120px;
+    cursor: pointer;
+    width:60%
+}
+
 #footer{
     height:50px;
     width:700px;
@@ -113,12 +151,6 @@ a{
     font-size:25px;
 }
 
-#youtube-icon{
-    width:20px;
-    height:auto;
-    z-index:2000;
-    position:fixed;
-}
 #cover{
     position:fixed;
     width:100%;
