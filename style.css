@@ -27,7 +27,7 @@ body{
 	height: 100%;
 	z-index: 1050;
 	opacity: 1.0;
-	background: url(img/banner.png) 50% 50% no-repeat #fff;
+	background-color: #fff;
 }
 
 input[type=text], select {
@@ -69,6 +69,7 @@ input[type=text], select {
     width:700px;
     height: 300px;
     z-index:900;
+    overflow:hidden; /* this is a TEMPORARY fix for overflowing text*/
 }
 
 #avatar{
@@ -125,7 +126,7 @@ input[type=text], select {
     margin-top:-14px;
     margin-left:120px;
     cursor: pointer;
-    width:60%
+    width:559px;
 }
 
 #footer{
@@ -161,6 +162,9 @@ a{
     z-index:801;
 }
 #youtube-player{
+    display:flex;
+    justify-content:center;
+    align-items:center;
     position:fixed;
     top:0;
     left:0;
