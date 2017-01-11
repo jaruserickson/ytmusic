@@ -24,8 +24,7 @@ function submit() {
         "https://www.googleapis.com/youtube/v3/channels",{
             part: 'snippet',
             forUsername: channelName,
-            key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
-            //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
+            key: 'AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY'}, //change for offline testing
             function(data){
                 $.each(data.items, function(i, item) {
                     profilePicURL = item.snippet.thumbnails.high.url;
@@ -38,8 +37,7 @@ function submit() {
                         "https://www.googleapis.com/youtube/v3/channels",{
                             part: 'brandingSettings',
                             forUsername: channelName,
-                            key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
-                            //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
+                            key: 'AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY'},
                             function(data){
                                 $.each(data.items, function(i, item) {
                                     profileBannerURL = item.brandingSettings.image.bannerImageUrl;
@@ -76,8 +74,7 @@ function playAll() {
         "https://www.googleapis.com/youtube/v3/channels",{
             part: 'contentDetails',
             forUsername: channelName,
-            key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
-            //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
+            key: 'AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY'},
             function(data){
                 $.each(data.items, function(i, item){
                     console.log(item);
@@ -86,32 +83,6 @@ function playAll() {
                     onYouTubeIframeAPIReady(uploadsID);
                     $("#footer").addClass("new-item");
                     $("#player").fadeIn();
-                })
-            }
-    );
-}
-//get uploads playlistItems
-//add the div which has video thumbnails as album titles
-//add the fixed div at the bottom for audio player
-
-function getVids(upID) {
-    //gets video data by bounds of the API call
-    $.get(
-        "https://www.googleapis.com/youtube/v3/playlistItems",{
-            part: 'snippet',
-            maxResults: 10, //should make a further api call when needed.
-            playlistId: upID,
-            key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
-            //AIzaSyAu0wr25RZ-EwESsvpo4FW3Dib9-_OQ0LY for online
-            function(data){
-                var output;
-                $.each(data.items, function(i, item) {
-                    console.log(item);
-                    vidTitle = item.snippet.title;
-                    vidThumbnailURL = item.snippet.thumbnails.maxres.url;
-                    vidId = item.snippet.resourceId.videoId;
-
-                    output = '<li>' + vidTitle + '</li>';
                 })
             }
     );
