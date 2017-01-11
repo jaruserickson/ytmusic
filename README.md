@@ -5,6 +5,11 @@
 
 Type the channel ID you'd like to listen to into the main frame, and enjoy!
 
+## Usage
+Just clone the repository wherever you feel, and open `index.html`!
+
+Unfortunately I can't run this page online due to the nature of gh-pages. :pensive:
+
 ---
 
 ## Resources used
@@ -13,4 +18,4 @@ Type the channel ID you'd like to listen to into the main frame, and enjoy!
 - animate.css
 - Google material design icons
 
-*created with :purple_heart: on a tuesday in january*
+*hacked together with :purple_heart: on a tuesday in january*
