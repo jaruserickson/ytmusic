@@ -79,35 +79,9 @@ function playAll() {
                 $.each(data.items, function(i, item){
                     console.log(item);
                     uploadsID = item.contentDetails.relatedPlaylists.uploads;
-                    getVids(uploadsID);
                     onYouTubeIframeAPIReady(uploadsID);
                     $("#footer").addClass("new-item");
                     $("#player").fadeIn();
-                })
-            }
-    );
-}
-//get uploads playlistItems
-//add the div which has video thumbnails as album titles
-//add the fixed div at the bottom for audio player
-
-function getVids(upID) {
-    //gets video data by bounds of the API call
-    $.get(
-        "https://www.googleapis.com/youtube/v3/playlistItems",{
-            part: 'snippet',
-            maxResults: 10, //should make a further api call when needed.
-            playlistId: upID,
-            key: 'AIzaSyDQsKfmF5Jy8XUat__SPdqw034lV9MuZAI'},
-            function(data){
-                var output;
-                $.each(data.items, function(i, item) {
-                    console.log(item);
-                    vidTitle = item.snippet.title;
-                    vidThumbnailURL = item.snippet.thumbnails.maxres.url;
-                    vidId = item.snippet.resourceId.videoId;
-
-                    output = '<li>' + vidTitle + '</li>';
                 })
             }
     );

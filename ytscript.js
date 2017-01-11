@@ -75,6 +75,7 @@ function onPlayerStateChange(event) {
     }
     if (player.getPlayerState() == 1) {
         document.getElementById("subtext").innerText = player.getVideoData().title;
+        document.getElementById("tabbar").innerText = player.getVideoData().title;
     }
 }
 
