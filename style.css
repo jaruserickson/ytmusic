@@ -15,6 +15,7 @@ body{
 	height: 100%;
 	margin: 0;
 	padding: 0;
+    background-color:#333;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -47,14 +48,13 @@ input[type=text], select {
 	justify-content: center;
     width: 700px;
     height: 300px;
-    background-color:rgba(0,0,0,0.09);
+    background-color:rgba(255,255,255,0.7);
     z-index: 900;
 }
 
 #player{
     width: 700px;
     height: 100px;
-    z-index: 800;
 }
 
 #profile{
@@ -94,8 +94,9 @@ input[type=text], select {
     height:50px;
     width:700px;
     position:fixed;
-    background-color:#444;
+    background-color:#777;
     z-index:1000;
+    margin-top:-1px;
 }
 
 a:hover{
@@ -112,6 +113,27 @@ a{
     font-size:25px;
 }
 
+#youtube-icon{
+    width:20px;
+    height:auto;
+    z-index:2000;
+    position:fixed;
+}
+#cover{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity:0;
+    z-index:801;
+}
+#youtube-player{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+}
 /* thanks to jsfiddle/MadLittleMods! */
 .new-item {
   flex: .00001;
