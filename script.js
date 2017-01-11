@@ -3,7 +3,7 @@ var channelName;
 
 function keyData(x){
     if (x && x.keyCode === 13){
-        if (document.getElementById("channel").value != ""){
+        if (document.getElementById("channel").value != "" && document.getElementById("channel").value.length > 2){
             submit();
         }
         return x.keyCode != 13;
@@ -49,7 +49,7 @@ function submit() {
                                     $("#profile").css("background-repeat", "no-repeat");
                                     $("#profile").css("background-position", "center");
                                     $("#profile").css("background-size", "auto 100%");
-                                    $("#profile").append('<div><a id="clicker" onclick="playAll()"><img id="play" src="img/ic_play_circle_filled_black_48dp.png"/></a><h3 id="subtext">play all</h3></div>');
+                                    $("#profile").append('<a id="clicker" onclick="playAll()"><img id="play" src="img/ic_play_circle_filled_black_48dp.png"/></a><h3 id="subtext">play all</h3>');
                                 })
                             }
                     );
@@ -66,6 +66,7 @@ function playAll() {
     console.log("playing");
     //gets uploads playlist and creates player
     document.getElementById("clicker").onclick = null;
+    document.getElementById("subtext").innerText = "...";
     $("#clicker").css("cursor", "default");
     $("#play").fadeTo(300, 0.000001);
     $("#subtext").animate({marginTop: '-40px', marginLeft: '53px'}, 1000);
